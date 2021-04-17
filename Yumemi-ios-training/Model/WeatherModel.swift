@@ -10,13 +10,22 @@ import YumemiWeather
 
 protocol WeatherModelDelegate : AnyObject {
     func weatherModel(_ weatherModel: WeatherModel, didReturnWeather weather: String)
+    
+    func weatherModel(_ weatherModel: WeatherModel, didReturnError error: Error)
+
 }
 
 class WeatherModel {
     weak var delegate: WeatherModelDelegate?
     
-     func returnRandomWeather() {
-        let randomWeather = YumemiWeather.fetchWeather()
-        delegate?.weatherModel(self, didReturnWeather: randomWeather)
+    func returnWeatherOrError(area: String) {
+        do {
+            let randomWeather = try YumemiWeather.fetchWeather(at: area)
+            delegate?.weatherModel(self, didReturnWeather: randomWeather)
+        } catch YumemiWeatherError.unknownError {
+            delegate?.weatherModel(self, didReturnError: YumemiWeatherError.unknownError)
+        } catch {
+            print("others")
+        }
     }
 }
