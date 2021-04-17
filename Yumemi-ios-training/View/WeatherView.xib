@@ -22,7 +22,10 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ic-bf-ESZ" userLabel="Blue Label">
                     <rect key="frame" x="103.5" y="541" width="103.5" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Mqp-v6-9EI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="7"/>
                     <color key="textColor" systemColor="linkColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -36,7 +39,10 @@
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TB-ZD-IGv" userLabel="Red Label">
                     <rect key="frame" x="207" y="541" width="103.5" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="4bC-Qp-DVc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="7"/>
                     <color key="textColor" name="Red"/>
                     <nil key="highlightedColor"/>
                 </label>
