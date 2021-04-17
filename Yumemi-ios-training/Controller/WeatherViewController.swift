@@ -34,22 +34,40 @@ class WeatherViewController: UIViewController {
     }
     
     @objc private func onReloadButtonTapped() {
-        weatherModel?.returnRandomWeather()
+        let area = "tokyo"
+        weatherModel?.returnWeatherOrError(area: area)
     }
 
 }
 
 extension WeatherViewController : WeatherModelDelegate {
+    
+    func configureImage(weather: String, color: UIColor) {
+        weatherView.weatherImageView.image = UIImage(named: weather)
+        weatherView.weatherImageView.tintColor = color
+    }
+    
     func weatherModel(_ weatherModel: WeatherModel, didReturnWeather weather: String) {
         if weather == "sunny" {
-            weatherView.weatherImageView.image = UIImage(named: weather)
-            weatherView.weatherImageView.tintColor = .red
+            configureImage(weather: weather, color: .red)
         } else if weather == "cloudy" {
-            weatherView.weatherImageView.image = UIImage(named: weather)
-            weatherView.weatherImageView.tintColor = .gray
+            configureImage(weather: weather, color: .gray)
         } else {
-            weatherView.weatherImageView.image = UIImage(named: weather)
-            weatherView.weatherImageView.tintColor = .blue
+            configureImage(weather: weather, color: .blue)
         }
+    }
+    
+    func weatherModel(_ weatherModel: WeatherModel, didReturnError error: Error) {
+        let alert = UIAlertController(title: "エラー",
+                                      message: "天気予報を取得できませんでした",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK",
+                                      style: .default,
+                                      handler: { _ in
+                                        NSLog("The \"OK\" alert occured.\nエラー内容→\(error)")
+                                        }))
+        self.present(alert,
+                     animated: true,
+                     completion: nil)
     }
 }
