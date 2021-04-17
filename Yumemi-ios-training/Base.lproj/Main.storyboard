@@ -3,64 +3,20 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Weather View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Yumemi_ios_training" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WeatherViewController" customModule="Yumemi_ios_training" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fdm-qL-zci">
-                                <rect key="frame" x="103.5" y="334" width="207" height="207"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="fdm-qL-zci" secondAttribute="height" multiplier="1:1" id="zUo-qA-7l0"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQu-jf-s5I" userLabel="Blue Label">
-                                <rect key="frame" x="103.5" y="541" width="103.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="linkColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLP-Oc-omV" userLabel="Red Label">
-                                <rect key="frame" x="207" y="541" width="103.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="Red"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5x-is-oWq">
-                                <rect key="frame" x="136" y="642" width="39" height="30"/>
-                                <state key="normal" title="Close"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qvu-BJ-Tcl">
-                                <rect key="frame" x="235.5" y="642" width="47" height="30"/>
-                                <state key="normal" title="Reload"/>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="bQu-jf-s5I" firstAttribute="width" secondItem="fdm-qL-zci" secondAttribute="width" multiplier="0.5" id="6bE-N1-Hve"/>
-                            <constraint firstItem="fdm-qL-zci" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-10.5" id="9PJ-Ln-3c3"/>
-                            <constraint firstItem="fdm-qL-zci" firstAttribute="centerX" secondItem="bQu-jf-s5I" secondAttribute="trailing" id="G51-k2-rhm"/>
-                            <constraint firstItem="bQu-jf-s5I" firstAttribute="top" secondItem="fdm-qL-zci" secondAttribute="bottom" id="Ifq-WH-TGf"/>
-                            <constraint firstItem="fLP-Oc-omV" firstAttribute="top" secondItem="fdm-qL-zci" secondAttribute="bottom" id="LXg-kR-RFe"/>
-                            <constraint firstItem="fdm-qL-zci" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="RIs-h5-jVY"/>
-                            <constraint firstItem="fLP-Oc-omV" firstAttribute="leading" secondItem="fdm-qL-zci" secondAttribute="centerX" id="Rfu-OP-FyM"/>
-                            <constraint firstItem="fdm-qL-zci" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YJN-Nv-keO"/>
-                            <constraint firstItem="Qvu-BJ-Tcl" firstAttribute="top" secondItem="fLP-Oc-omV" secondAttribute="bottom" constant="80" id="acz-Or-t5M"/>
-                            <constraint firstItem="Qvu-BJ-Tcl" firstAttribute="centerX" secondItem="fLP-Oc-omV" secondAttribute="centerX" id="bEy-eW-Ipl"/>
-                            <constraint firstItem="B5x-is-oWq" firstAttribute="top" secondItem="bQu-jf-s5I" secondAttribute="bottom" constant="80" id="taJ-yr-dt9"/>
-                            <constraint firstItem="B5x-is-oWq" firstAttribute="centerX" secondItem="bQu-jf-s5I" secondAttribute="centerX" id="xzO-VS-Hwv"/>
-                            <constraint firstItem="fLP-Oc-omV" firstAttribute="width" secondItem="fdm-qL-zci" secondAttribute="width" multiplier="0.5" id="z8b-g1-MuA"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -69,12 +25,6 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="Red">
-            <color red="1" green="0.210999995470047" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
