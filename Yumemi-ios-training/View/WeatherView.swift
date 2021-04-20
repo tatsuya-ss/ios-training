@@ -30,5 +30,4 @@ class WeatherView : UIView {
             self.addSubview(view)
         }
     }
-    
 }

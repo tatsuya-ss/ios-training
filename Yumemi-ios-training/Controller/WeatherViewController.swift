@@ -48,11 +48,12 @@ extension WeatherViewController : WeatherModelDelegate {
     }
     
     func weatherModel(_ weatherModel: WeatherModel, didReturnWeather weather: String) {
-        if weather == "sunny" {
+        switch weather {
+        case "sunny":
             configureImage(weather: weather, color: .red)
-        } else if weather == "cloudy" {
+        case "cloudy":
             configureImage(weather: weather, color: .gray)
-        } else {
+        default:
             configureImage(weather: weather, color: .blue)
         }
     }
