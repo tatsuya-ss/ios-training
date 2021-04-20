@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		752AD622262EC4D9003AC36B /* WeatherState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752AD621262EC4D9003AC36B /* WeatherState.swift */; };
 		756B4188262982840044AE68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B4187262982840044AE68 /* AppDelegate.swift */; };
 		756B418A262982840044AE68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B4189262982840044AE68 /* SceneDelegate.swift */; };
 		756B418C262982840044AE68 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B418B262982840044AE68 /* WeatherViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		752AD621262EC4D9003AC36B /* WeatherState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherState.swift; sourceTree = "<group>"; };
 		756B4184262982840044AE68 /* Yumemi-ios-training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yumemi-ios-training.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		756B4187262982840044AE68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		756B4189262982840044AE68 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				756B4190262982880044AE68 /* Assets.xcassets */,
 				756B4192262982880044AE68 /* LaunchScreen.storyboard */,
 				756B4195262982880044AE68 /* Info.plist */,
+				752AD621262EC4D9003AC36B /* WeatherState.swift */,
 			);
 			path = "Yumemi-ios-training";
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				756B418C262982840044AE68 /* WeatherViewController.swift in Sources */,
 				756B4188262982840044AE68 /* AppDelegate.swift in Sources */,
 				756B41C42629C0C20044AE68 /* WeatherModel.swift in Sources */,
+				752AD622262EC4D9003AC36B /* WeatherState.swift in Sources */,
 				756B418A262982840044AE68 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

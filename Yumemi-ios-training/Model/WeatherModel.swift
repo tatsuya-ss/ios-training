@@ -9,7 +9,7 @@ import Foundation
 import YumemiWeather
 
 protocol WeatherModelDelegate : AnyObject {
-    func weatherModel(_ weatherModel: WeatherModel, didReturnWeather weather: String)
+    func weatherModel(_ weatherModel: WeatherModel, didReturnWeather weather: weatherState)
     
     func weatherModel(_ weatherModel: WeatherModel, didReturnError error: Error)
 
@@ -18,14 +18,19 @@ protocol WeatherModelDelegate : AnyObject {
 class WeatherModel {
     weak var delegate: WeatherModelDelegate?
     
-    func returnWeatherOrError(area: String) {
+    func fetchJsonWeather(area: String) {
         do {
-            let randomWeather = try YumemiWeather.fetchWeather(at: area)
-            delegate?.weatherModel(self, didReturnWeather: randomWeather)
-        } catch YumemiWeatherError.unknownError {
+            let jsonWeather = try YumemiWeather.fetchWeather(area)
+            guard let jsonData = jsonWeather.data(using: .utf8) else { return }
+            let resultWeather = try JSONDecoder().decode(weatherState.self, from: jsonData)
+            delegate?.weatherModel(self, didReturnWeather: resultWeather)
+        } catch YumemiWeatherError.unknownError{
             delegate?.weatherModel(self, didReturnError: YumemiWeatherError.unknownError)
+        } catch YumemiWeatherError.invalidParameterError {
+            delegate?.weatherModel(self, didReturnError: YumemiWeatherError.invalidParameterError)
         } catch {
             print("others")
         }
     }
 }
+
