@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherView" customModule="Yumemi_ios_training" customModuleProvider="target">
             <connections>
+                <outlet property="highestTemperatureLabel" destination="2TB-ZD-IGv" id="ju9-Cw-Ebj"/>
+                <outlet property="minimumTemperatureLabel" destination="8ic-bf-ESZ" id="lmP-Z7-oCv"/>
                 <outlet property="reloadButton" destination="jla-P3-Iqx" id="OMG-97-0t7"/>
                 <outlet property="weatherImageView" destination="mMu-9V-G4h" id="JVq-dm-Yav"/>
             </connections>
@@ -25,7 +27,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="Mqp-v6-9EI"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" systemColor="linkColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -42,7 +44,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="4bC-Qp-DVc"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" name="Red"/>
                     <nil key="highlightedColor"/>
                 </label>

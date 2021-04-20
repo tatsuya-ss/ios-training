@@ -34,32 +34,42 @@ class WeatherViewController: UIViewController {
     }
     
     @objc private func onReloadButtonTapped() {
-        let area = "tokyo"
-        weatherModel?.returnWeatherOrError(area: area)
+        let area:String = """
+{
+       "area": "tokyo",
+       "date": "2020-04-01T12:00:00+09:00"
     }
-
+"""
+        weatherModel?.fetchJsonWeather(area: area)
+    }
+    
 }
 
 extension WeatherViewController : WeatherModelDelegate {
     
-    func configureImage(weather: String, color: UIColor) {
+    func configureImage(weather: String, color: UIColor, max: String, min: String) {
         weatherView.weatherImageView.image = UIImage(named: weather)
         weatherView.weatherImageView.tintColor = color
+        weatherView.highestTemperatureLabel.text = max
+        weatherView.minimumTemperatureLabel.text = min
     }
     
-    func weatherModel(_ weatherModel: WeatherModel, didReturnWeather weather: String) {
-        switch weather {
+    func weatherModel(_ weatherModel: WeatherModel, didReturnWeather weather: weatherState) {
+        switch weather.weather {
         case "sunny":
-            configureImage(weather: weather, color: .red)
+            configureImage(weather: weather.weather, color: .red, max: String(weather.max_temp), min: String(weather.min_temp))
         case "cloudy":
-            configureImage(weather: weather, color: .gray)
+            configureImage(weather: weather.weather, color: .gray, max: String(weather.max_temp), min: String(weather.min_temp))
+        case "rainy":
+            configureImage(weather: weather.weather, color: .blue, max: String(weather.max_temp), min: String(weather.min_temp))
+
         default:
-            configureImage(weather: weather, color: .blue)
+            print("other")
         }
     }
     
     func weatherModel(_ weatherModel: WeatherModel, didReturnError error: Error) {
-        let alert = UIAlertController(title: "エラー",
+        let alert = UIAlertController(title: "\(error)エラー",
                                       message: "天気予報を取得できませんでした",
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK",
